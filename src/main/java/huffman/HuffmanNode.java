@@ -22,18 +22,17 @@ class HuffmanNode<T> implements Comparable<HuffmanNode> {
 			this.chars = s;
 		}
 		
+		@Override
 		public boolean equals(java.lang.Object arg0)
 		{
 			return false;
 		}
+		@Override
 		public String toString()
 		{
 			return "c="+chars+",fre="+frequence+",code="+pathCode;
 		}
 	
-		/**
-		 * 
-		 */
 		public int compareTo(HuffmanNode n) {
 			if (this.frequence > n.frequence) {
 				return 1;
