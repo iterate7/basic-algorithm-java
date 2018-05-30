@@ -10,6 +10,7 @@ class HuffmanNode<T> implements Comparable<HuffmanNode> {
 		private int frequence = 0;
 		private int pathCode = -1;
 		private String encode="";
+		
 		private HuffmanNode<T> parent;
 
 		public HuffmanNode()

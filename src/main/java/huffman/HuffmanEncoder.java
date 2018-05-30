@@ -30,7 +30,14 @@ public class HuffmanEncoder<T> {
 		}
 	}
 
-	//鏋勫缓huffman鏍戠殑杩囩▼锛佹瘡涓妭鐐规壘鍒扮埗浜茶妭鐐广��
+	
+	/**
+	 * 1. poll the minimum two nodes.
+	 * 2. merge them and generate one parent which has its children's frequency sum.
+	 * 3. set the left code of child as 0; set the right code of child as 1.
+	 * 4. add the parent node into sorted collections by frequency. 
+	 * 
+	 */
 	private void merger() {
 
 		
@@ -81,7 +88,7 @@ public class HuffmanEncoder<T> {
 			allLeafNodes.add(node);
 			System.out.println(node.toString());
 		}
-		//鎴戜滑鐨勭洰鏍囧氨鏄牴鎹笉鍚岀殑fre锛屾眰瑙ｅ嚭鍙跺瓙鑺傜偣鐨刢ode鍊�
+		//閹存垳婊戦惃鍕窗閺嶅洤姘ㄩ弰顖涚壌閹诡喕绗夐崥宀�娈慺re閿涘本鐪扮憴锝呭毉閸欒泛鐡欓懞鍌滃仯閻ㄥ垻ode閸婏拷
 		HuffmanEncoder he = new HuffmanEncoder();
 		he.make(allLeafNodes);
 		
@@ -91,7 +98,7 @@ public class HuffmanEncoder<T> {
 			String c = (String)node.getChars();
 			int fre = node.getFrequence();
 			
-			//浠庤繖涓妭鐐逛竴鐩村線涓婅蛋锛屽緱鍒拌矾寰勶紝閫嗗悜璺緞鍒欏氨鏄痗ode
+			//娴犲氦绻栨稉顏囧Ν閻愰�涚閻╂潙绶氭稉濠呰泲閿涘苯绶遍崚鎷岀熅瀵板嫸绱濋柅鍡楁倻鐠侯垰绶為崚娆忔皑閺勭棗ode
 			StringBuffer sb = new StringBuffer();
 			HuffmanNode temp = node;
 			while(temp.getParent()!=null)
@@ -113,12 +120,12 @@ public class HuffmanEncoder<T> {
 		
 		//data
 		Map<String,Integer> item2Fre = new HashMap<String,Integer>();
-		item2Fre.put("鎴戜滑", 15);
-		item2Fre.put("鍠滄", 8);
-		item2Fre.put("瑙傜湅", 6);
-		item2Fre.put("宸磋タ", 5);
-		item2Fre.put("瓒崇悆", 3);
-		item2Fre.put("涓栫晫鏉�", 1);
+		item2Fre.put("閹存垳婊�", 15);
+		item2Fre.put("閸犳粍顐�", 8);
+		item2Fre.put("鐟欏倻婀�", 6);
+		item2Fre.put("瀹哥銈�", 5);
+		item2Fre.put("鐡掑磭鎮�", 3);
+		item2Fre.put("娑撴牜鏅弶锟�", 1);
 		
 		HuffmanEncoder<String> encoder = new HuffmanEncoder<String>();
 		
