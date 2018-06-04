@@ -55,7 +55,7 @@ public class KDTreeMaths {
 		return ret;
 	}
 	
-	public static float median(float[] col, int dimension)
+	public static float median(float[] col)
 	{
 		return findPos(col,0, col.length-1, col.length/2);
 	}
@@ -132,7 +132,7 @@ public class KDTreeMaths {
     }
     
     //all range for each dimension.
-    public float[][] maxmin(List<float[]>data, int dimension)
+    public static float[][] maxmin(List<float[]>data, int dimension)
     {
     	float[][] max_min = new float[2][dimension];
     	for(int i=0;i<dimension;i++)

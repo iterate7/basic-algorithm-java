@@ -18,14 +18,14 @@ import java.util.List;
 public class KDTreeNode {
 
 	//feature
-	public int dimension;
+	public int partitionDimension;
 	
 	//the value split privolot base dimension
 	public float partitionValue;
 	
 	public boolean isLeaf;
 	
-	public List<float[]> dataItems;
+	public List<float[]> value;
 	
 	public KDTreeNode left;
 	public KDTreeNode right;
