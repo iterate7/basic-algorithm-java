@@ -6,7 +6,7 @@ import java.util.List;
 public class KDTree {
 
 	public KDTreeNode root = null;
-	private float [][] globalMaxMin = new float[2][0];
+	
 	private int totalDimension = -1;
 	public KDTree() {
 	}
@@ -14,11 +14,8 @@ public class KDTree {
 	public void build(List<float[]> data)
 	{
 		
-		int totalItems = data.size();
 		totalDimension = data.get(0).length;
-		
-		globalMaxMin = new float[2][totalDimension];
-		globalMaxMin = KDTreeMaths.maxmin(data, totalDimension);
+	
 		root = new KDTreeNode();
 		root = createNode(root,data,totalDimension);
 		
@@ -43,7 +40,7 @@ public class KDTree {
 		{
 			node.isLeaf = true;
 			node.left = node.right = null;
-			node.value = data;
+			node.value = data.get(0);
 		}
 		
 		//选择特征，方差最大的，区分大； 可以参考决策树
@@ -64,7 +61,7 @@ public class KDTree {
 		if(var == 0)
 		{
 			node.isLeaf = true;
-			node.value = data;
+			node.value = data.get(0);
 			return node;
 		}
 			

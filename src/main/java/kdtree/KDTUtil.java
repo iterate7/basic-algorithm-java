@@ -21,8 +21,8 @@ public class KDTUtil {
                 System.out.print("\t");
             StringBuilder s = new StringBuilder();
             s.append('(');
-            for(int i=0;i<node.value.size();i++){
-                s.append(Arrays.toString(node.value.get(i))).append(',');
+            for(int i=0;i<node.value.length;i++){
+                s.append((node.value[i])).append(',');
             }
             s.append((')'));
             System.out.println(s);

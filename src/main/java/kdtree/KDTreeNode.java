@@ -25,7 +25,7 @@ public class KDTreeNode {
 	
 	public boolean isLeaf;
 	
-	public List<float[]> value;
+	public float[] value;
 	
 	public KDTreeNode left;
 	public KDTreeNode right;
