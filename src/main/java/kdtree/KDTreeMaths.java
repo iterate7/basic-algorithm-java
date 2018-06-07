@@ -24,9 +24,10 @@ public class KDTreeMaths {
 	public static float distance(float[] v1, float[] v2) {
 		float sum = 0;
 		for (int i = 0; i < v1.length; i++) {
-			sum += Math.pow(v1[i] - v2[i], 2);
+			//sum += Math.pow(v1[i] - v2[i], 2);
+			sum+=v1[i]*v2[i];
 		}
-		return sum;
+		return 1-sum;
 	}
 
 	public static float variance(float[] item) {
